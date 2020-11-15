@@ -23,8 +23,8 @@ export default class Class {
   @OneToMany(type => Lesson, classe => Class)
   lessons: Lesson[];
 
-  @OneToMany(type => Rooms, type => Class)
-  rooms: Rooms;
+  // @OneToMany(type => Rooms, type => Class)
+  // rooms: Rooms;
 
   @Column()
   duration: number;

@@ -1,5 +1,6 @@
 import CreatedUpdated from './CreatedUpdated';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import Class from './Class';
 
 @Entity('rooms')
 export default class Rooms {
@@ -11,4 +12,8 @@ export default class Rooms {
 
   @Column(type => CreatedUpdated)
   created: CreatedUpdated;
+
+  // remete a Class
+  @ManyToOne(type => Class, room => Rooms, { eager: true })
+  room: Rooms;
 }
