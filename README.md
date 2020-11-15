@@ -2,11 +2,7 @@
 
 --  npm install 
 
-## 1° Execução no docker
-
--- docker-compose up --build
-
-## Demais execuções
+## Execução do server no docker
 
 -- docker-compose up
 
