@@ -7,6 +7,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import Lesson from './Lesson';
+import Rooms from './Rooms';
 
 @Entity()
 export default class Class {
@@ -21,6 +22,9 @@ export default class Class {
 
   @OneToMany(type => Lesson, classe => Class)
   lessons: Lesson[];
+
+  @OneToMany(type => Rooms, type => Class)
+  rooms: Rooms;
 
   @Column()
   duration: number;
