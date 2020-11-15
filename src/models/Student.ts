@@ -2,8 +2,6 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  CreateDateColumn,
-  UpdateDateColumn,
   ManyToMany,
   JoinTable,
 } from 'typeorm';
@@ -17,6 +15,7 @@ import {
   MinLength,
 } from 'class-validator';
 import Class from './Class';
+import CreatedUpdated from './CreatedUpdated';
 
 @Entity('student')
 export default class Student {
@@ -41,9 +40,6 @@ export default class Student {
   @JoinTable()
   classes: Class;
 
-  @CreateDateColumn({ name: 'created_At' })
-  createdAt: Date;
-
-  @UpdateDateColumn({ name: 'updated_At' })
-  updatedAt: Date;
+  @Column(type => CreatedUpdated)
+  created: CreatedUpdated;
 }

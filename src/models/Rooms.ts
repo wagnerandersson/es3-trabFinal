@@ -1,13 +1,5 @@
-import { type } from 'os';
-import Class from './Class';
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  OneToMany,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import CreatedUpdated from './CreatedUpdated';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('rooms')
 export default class Rooms {
@@ -17,9 +9,6 @@ export default class Rooms {
   @Column()
   classHour: number;
 
-  @CreateDateColumn({ name: 'created_At' })
-  createdAt: Date;
-
-  @UpdateDateColumn({ name: 'updated_At' })
-  updatedAt: Date;
+  @Column(type => CreatedUpdated)
+  created: CreatedUpdated;
 }

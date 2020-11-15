@@ -1,11 +1,4 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-  TableInheritance,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, PrimaryGeneratedColumn } from 'typeorm';
 
 // @Entity('institution')
 export default class Identifier {
@@ -17,10 +10,4 @@ export default class Identifier {
 
   @Column()
   cnpj: string;
-
-  @CreateDateColumn({ name: 'created_At' })
-  createdAt: Date;
-
-  @UpdateDateColumn({ name: 'updated_At' })
-  updatedAt: Date;
 }
