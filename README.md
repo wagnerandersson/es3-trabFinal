@@ -18,7 +18,7 @@
 - [x]  Conectar com banco de dados rodando no docker
 - [x]  Utilização de boas práticas
 - [x]  Utilizar relacionamentos entre tabelas
-- [ ]  Validações nas models
+- [x]  Validações nas models
 - [x]  Criar novos campos
 - [x]  Validar novos e antigos campos
 - [x]  Gerar migrações destes novos campos
